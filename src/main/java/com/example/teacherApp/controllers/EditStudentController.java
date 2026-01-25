@@ -47,24 +47,28 @@ public class EditStudentController {
                  alert.showAndWait();
         }
         else {
-            for (Student s : students) {
-                if (s.getFull_name().equals(student.getFull_name())) {
-                    s.setGrade_1(Double.parseDouble(grade1.getText()));
-                    s.setGrade_2(Double.parseDouble(grade2.getText()));
-                    s.setGrade_3(Double.parseDouble(grade3.getText()));
-                    s.calculateGrades();
+            confirmSubmit(alert);
+        }
+    }
+    // A function for changing the grades after providing the conditions in the (submit) function.
+    public void confirmSubmit(Alert alert){
+        for (Student s : students) {
+            if (s.getFull_name().equals(student.getFull_name())) {
+                s.setGrade_1(Double.parseDouble(grade1.getText()));
+                s.setGrade_2(Double.parseDouble(grade2.getText()));
+                s.setGrade_3(Double.parseDouble(grade3.getText()));
+                s.calculateGrades();
 
-                    alert.setTitle("The student's grades");
-                    alert.setHeaderText("The student's grades are updated.");
-                    alert.setContentText("The student's point now is: "+s.getPoint());
-                    alert.showAndWait();
+                alert.setTitle("The student's grades");
+                alert.setHeaderText("The student's grades are updated.");
+                alert.setContentText("The student's point now is: "+s.getPoint());
+                alert.showAndWait();
 
-                    studentPointLabel.setText(String.valueOf(s.getPoint()));
-                    double[] grades = {s.getGrade_1(),s.getGrade_2(),s.getGrade_3()};
-                    studentsManager.updateGrades(s.getFull_name(),s.getID(),grades,s.getPoint());
-                    tableView.refresh();
-                    break;
-                }
+                studentPointLabel.setText(String.valueOf(s.getPoint()));
+                double[] grades = {s.getGrade_1(),s.getGrade_2(),s.getGrade_3()};
+                studentsManager.updateGrades(s.getFull_name(),s.getID(),grades,s.getPoint());
+                tableView.refresh();
+                break;
             }
         }
     }

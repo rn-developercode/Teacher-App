@@ -9,7 +9,7 @@
 This project allows you to :
 - This is a program about managing students, users, saving-open students data, and saving statistics class file.
 - It's a system built with **JavaFx**, **Scene builder**, **Maven, SQLite**, etc.
-- This is a new version (3.0.0), and it's a full refactor of the older Swing version (2.7.2).
+- This is a new version (3.3.3), and it's a full refactor of the older Swing version (2.7.2).
 
 ---
 
@@ -64,4 +64,4 @@ This problem will only happen when you delete a student except the last student,
 ## **The developer**
 - **Status** : Alone.
 - **Github** : [https://github.com/tanjawi-code].
-- *Version* : 3.3.2
+- *Version* : 3.3.3
